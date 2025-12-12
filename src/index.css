@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm forest cabin palette */
+    --background: 30 20% 8%;
+    --foreground: 40 30% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 30 15% 12%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 35 90% 55%;
+    --primary-foreground: 30 20% 8%;
+
+    --secondary: 200 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 160 40% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 25%;
+    --input: 40 20% 25%;
+    --ring: 35 90% 55%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --glass-bg: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 100% / 0.15;
+    --glass-highlight: 0 0% 100% / 0.25;
+    --warm-glow: 35 100% 60%;
+    --forest-green: 140 40% 30%;
+    --sunset-gold: 38 95% 60%;
+    --deep-shadow: 30 30% 5%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 20% 8%;
+    --foreground: 40 30% 95%;
+    --card: 30 15% 12%;
+    --card-foreground: 40 30% 95%;
+    --popover: 30 15% 12%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 35 90% 55%;
+    --primary-foreground: 30 20% 8%;
+    --secondary: 200 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 160 40% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 40 20% 25%;
+    --input: 40 20% 25%;
+    --ring: 35 90% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply overflow-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  /* Unified glass panel - semi-transparent with soft blur */
+  .glass-card {
+    @apply backdrop-blur-sm rounded-3xl;
+    background: hsl(0 0% 100% / 0.08);
+    border: 1px solid hsl(0 0% 100% / 0.15);
+  }
+
+  /* Glass button */
+  .glass-card-button {
+    @apply backdrop-blur-sm rounded-2xl px-6 py-3;
+    background: hsl(0 0% 100% / 0.08);
+    border: 1px solid hsl(0 0% 100% / 0.15);
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-200 cursor-pointer;
+    color: hsl(var(--foreground) / 0.7);
+  }
+
+  .nav-item:hover {
+    background: hsl(0 0% 100% / 0.1);
+    color: hsl(var(--foreground));
+  }
+
+  .nav-item.active {
+    background: hsl(0 0% 100% / 0.15);
+    color: hsl(var(--foreground));
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: hsl(var(--secondary));
+  }
+
+  .floating-particle {
+    @apply absolute rounded-full pointer-events-none;
+    background: hsl(var(--warm-glow) / 0.3);
+    animation: float-particle 20s infinite ease-in-out;
+  }
+}
+
+@layer utilities {
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-deep {
+    perspective: 1500px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) scale(1.2);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) translateX(-15px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-40px) translateX(10px) scale(1.1);
+    opacity: 0.5;
+  }
+}
