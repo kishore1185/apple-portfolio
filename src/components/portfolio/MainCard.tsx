@@ -47,7 +47,7 @@ export function MainCard({ activeSection, onSectionChange, selectedProject, onPr
 
         {/* VIEW RESUME */}
         <a
-          href="/resume.pdf"
+          href="R.Kishore-Resume.pdf"
           target="_blank"
           className="glass-card-button px-4 py-1.5 text-sm font-medium"
         >
@@ -56,8 +56,8 @@ export function MainCard({ activeSection, onSectionChange, selectedProject, onPr
 
         {/* DOWNLOAD RESUME */}
         <a
-          href="/resume.pdf"
-          download="R_Kishore_Resume.pdf"
+          href="R.Kishore-Resume.pdf"
+          download="R.Kishore-Resume.pdf"
           className="glass-card-button px-4 py-1.5 text-sm font-medium"
         >
           Download Resume
