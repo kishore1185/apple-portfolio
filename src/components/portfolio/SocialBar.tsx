@@ -2,14 +2,14 @@ import { Linkedin, Mail, Github, Instagram } from 'lucide-react';
 
 const socialLinks = [
   { icon: Github, label: 'GitHub', href: 'https://github.com/kishore1185', external: true },
-  { icon: Mail, label: 'Email', href: 'mailto:2005kishore.sb@gmail.com', external: false },
+  // { icon: Mail, label: 'Email', href: 'mailto:2005kishore.sb@gmail.com', external: false },
   { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/kishore-r1185', external: true },
   { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/kishore_8532official?igsh=emxsNDg4bzA4a2N6&utm_source=qr', external: true },
 ];
 
 export function SocialBar() {
   return (
-    <div className="glass-card px-3 py-1.5 flex items-center justify-center gap-2 w-[360px] mx-auto">
+    <div className="glass-card px-3 py-1.5 flex items-center justify-center gap-2 w-[270px] mx-auto">
       {socialLinks.map((link) => (
         <a
           key={link.label}
