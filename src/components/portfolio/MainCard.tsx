@@ -3,7 +3,7 @@ import { ProjectCard } from './ProjectCard';
 import { ProjectDetailView } from './ProjectDetailView';
 import { projects, type Project } from '@/data/projects';
 import type { Section } from './LeftNavigation';
-import profilePhoto from '@/assets/profile-photo.jpg';
+import profilePhoto from '@/assets/profile-photo.PNG';
 
 interface MainCardProps {
   activeSection: Section;
